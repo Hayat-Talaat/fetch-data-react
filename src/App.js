@@ -10,7 +10,7 @@ function App() {
       <div>
         <Header />
         <Switch>
-          <Route path="/axios-data-fetch">
+          <Route path="/">
             <AxiosDataFetch />
           </Route>
           <Route path="/http-data-fetch">
