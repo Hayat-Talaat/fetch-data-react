@@ -1,16 +1,14 @@
 import React from "react";
-import { Link } from "react-router-dom";
 
 const Header = () => {
   return (
     <div>
       <div className="header">
         <a href="#default" className="logo">
-          CompanyLogo
+          HESN
         </a>
         <div className="header-right">
-          <Link to="/axios-data-fetch">AxiosDataFetch</Link>
-          <Link to="/http-data-fetch">HttpDataFetch</Link>
+          <p to="/">Assessments</p>
         </div>
       </div>
     </div>
