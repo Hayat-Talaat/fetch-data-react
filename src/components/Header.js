@@ -9,7 +9,7 @@ const Header = () => {
           CompanyLogo
         </a>
         <div className="header-right">
-          <Link to="/">AxiosDataFetch</Link>
+          <Link to="/axios-data-fetch">AxiosDataFetch</Link>
           <Link to="/http-data-fetch">HttpDataFetch</Link>
         </div>
       </div>
