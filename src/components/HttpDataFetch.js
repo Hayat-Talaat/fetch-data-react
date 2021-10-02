@@ -2,11 +2,14 @@ import React, { useState, useEffect } from "react";
 
 const HttpDataFetch = () => {
   const [posts, setPosts] = useState(null);
-  useEffect(async () => {
-    const res = await fetch("https://jsonplaceholder.typicode.com/posts");
-    const jsonData = await res.json();
-    const data = jsonData.slice(0, 10);
-    setPosts(data);
+  useEffect(() => {
+    async function fetchData() {
+      const res = await fetch("https://jsonplaceholder.typicode.com/posts");
+      const jsonData = await res.json();
+      const data = await jsonData.slice(0, 10);
+      setPosts(data);
+    }
+    fetchData();
   }, []);
 
   return (
