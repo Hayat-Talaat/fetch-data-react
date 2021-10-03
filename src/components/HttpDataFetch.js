@@ -1,15 +1,14 @@
 import React, { useState, useEffect } from "react";
 
 const HttpDataFetch = () => {
-  const [posts, setPosts] = useState(null);
+  const [assessments, setAssessments] = useState(null);
   useEffect(() => {
     async function fetchData() {
       const res = await fetch("http://localhost:3000/results");
-      // console.log("data", res);
       const jsonData = await res.json();
       const data = await jsonData;
       console.log(data);
-      setPosts(data);
+      setAssessments(data);
     }
     fetchData();
   }, []);
@@ -19,32 +18,34 @@ const HttpDataFetch = () => {
       <h2>HESN | Assessments</h2>
 
       <div className="container-card">
-        {posts &&
-          posts.map((post) => (
-            <div className="Assessment_wrap__1lLQY">
-              <div className="Assessment_assessmentHeader__26tlE">
-                <div className="Status_wrapper__3RaHV">
-                  <span className="Status_dot__292-K"></span>
-                  <span className="Status_text__sEfMA">New</span>
+        {assessments &&
+          assessments.map((assessment) => (
+            <div className="card-wraper">
+              <div className="card-header">
+                <div className="status_wrapper">
+                  <span className="status_dot"></span>
+                  <span className="status_text">New</span>
                 </div>
 
-                <div className="AssessmentPercentage_progress__5R8TS">
-                  {post.percentage} %
+                <div className="percentage_progress">
+                  {assessment.percentage} %
                 </div>
               </div>
               <div className="Assessment_assessmentContent__1IGN6">
-                <div className="TooltipCustom_wrap__3tkVb">
-                  <div className="Assessment_assessmentTitle__1q2Ud">
-                    {post.form.title}
+                <div>
+                  <div className="assessmentTitle marginb">
+                    {assessment.form.title}
                   </div>
                 </div>
-                <div className="TooltipCustom_wrap__3tkVb">
-                  <div className="Assessment_periodTitle__2KCg5">
-                    {post.period.title}
+
+                <div>
+                  <div className="assessment_periodTitle marginb">
+                    {assessment.period.title}
                   </div>
                 </div>
-                <div className="Assessment_periodStartEndDate__kmRM6">
-                  <span className="Assessment_iconWrap__5lYk7">
+
+                <div className="assessment_periodStartEndDate opacity marginb">
+                  <span className="assessment_iconWrap">
                     <svg width="16" height="16" viewBox="0 0 16 16">
                       <g fill-rule="evenodd" transform="translate(1)">
                         <path
@@ -55,20 +56,24 @@ const HttpDataFetch = () => {
                     </svg>
                   </span>
                   <span dir="ltr">
-                    <span dir="rtl">{post.period.end_date}</span> -{" "}
-                    <span dir="rtl">{post.period.start_date}</span>
+                    <span dir="rtl">{assessment.period.end_date}</span> -{" "}
+                    <span dir="rtl">{assessment.period.start_date}</span>
                   </span>
                 </div>
-                <div className="Assessment_assessmentTimeLeft__3nqPz">
+
+                <div className="assessment_assessmentTimeLeft opacity marginb">
                   <div>
-                    <span>94</span>&nbsp;<span>days</span>&nbsp;
+                    <span>- 94</span>&nbsp;<span>days</span>&nbsp;
                     <span>19:50</span>&nbsp;<span>hrs</span>
                   </div>
                 </div>
-                <div className="Assessment_dateCreated__3M6zL">
-                  <div>Date created:&nbsp;</div>
-                  <div className="Assessment_dateCreatedDate__1sXdq">
-                    {post.created_at}
+
+                <div className="assessment_dateCreated opacity marginb">
+                  <div className="display-inline">
+                    <b> Date created:&nbsp; </b>
+                  </div>
+                  <div className="assessment_dateCreatedDate display-inline">
+                    {assessment.created_at}
                   </div>
                 </div>
                 <div className="Assessment_footer__3Ydw_">

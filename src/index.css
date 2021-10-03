@@ -5,7 +5,8 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  color: gray;
+  color: #211e47;
+  background-color: #dadada;
 }
 
 code {
@@ -19,15 +20,15 @@ h2 {
 /* Style the header with a grey background and some padding */
 .header {
   overflow: hidden;
-  background-color: #272626;
-  padding: 12px 10px;
-  color: gray;
+  background-color: #211e47;
+  padding: 5px 15px;
+  color: #fff;
 }
 
 /* Style the header links */
 .header a {
   float: left;
-  color: gray;
+  color: #fff;
   text-align: center;
   padding: 12px;
   text-decoration: none;
@@ -71,45 +72,58 @@ h2 {
   }
 }
 
-ul {
-  display: flex;
-  justify-content: center;
-  column-gap: 10px;
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  padding: 10px;
-  flex-wrap: wrap;
-}
-.card {
-  width: 300px;
-  border: 1px #72a5b0 solid;
-  margin-bottom: 10px;
-  border-radius: 3px;
-}
-
-.card .header {
-  height: 70px;
-  background: #72a5b0;
-  color: white;
-  text-align: center;
-}
-
-.container {
-  padding: 2px 16px;
-  height: 200px;
-}
-
+/* Cards */
 .container-card {
   display: flex;
   justify-content: center;
-  column-gap: 10px;
+  column-gap: 25px;
 }
-.Assessment_wrap__1lLQY {
-  width: 300px;
-  border: 1px solid #3eb2c6;
+.card-wraper {
+  width: 30%;
+  border-top: 4px solid #3eb2c6;
   border-radius: 2px;
   padding: 10px;
+  box-shadow: 1px 2px 3px 2px #8080807a;
+  background: #fff;
+  color: #211e47;
+}
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+.status_dot {
+  height: 7px;
+  width: 7px;
+  background-color: #3eb2c6;
+  border-radius: 50%;
+  display: inline-block;
+  margin-right: 3px;
+}
+.percentage_progress {
+  color: #3eb2c6;
+}
+.assessmentTitle {
+  font-weight: bold;
+  margin-top: 20px;
+}
+.assessment_periodTitle {
+  opacity: 0.8;
+}
+.assessment_periodStartEndDate {
+  font-size: 15px;
+}
+.assessment_iconWrap {
+  margin-right: 3px;
+}
+.opacity {
+  opacity: 0.7;
+}
+.display-inline {
+  display: inline;
+}
+.marginb {
+  margin-bottom: 10px;
 }
 
 .ant-btn {
@@ -121,13 +135,10 @@ ul {
   border-radius: 6px;
   transition: all 0.3s ease;
   margin-top: 10px;
+  font-size: 16px;
 }
 .ant-btn:hover {
   color: #fff;
   background: #3eb2c6;
-}
-.Assessment_assessmentHeader__26tlE {
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 10px;
+  cursor: pointer;
 }
